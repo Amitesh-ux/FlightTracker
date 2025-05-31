@@ -7,12 +7,17 @@ const FlightCard = ({ data }) => {
   };
 
   return (
-    <div style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }}>
+    <div className="bg-white rounded shadow p-4 mb-4 border border-gray-200">
       <p><strong>From:</strong> {data.departure?.airport} ({data.departure?.iata})</p>
       <p><strong>To:</strong> {data.arrival?.airport} ({data.arrival?.iata})</p>
       <p><strong>Airline:</strong> {data.airline?.name}</p>
       <p><strong>Status:</strong> {data.flight_status}</p>
-      <button onClick={saveToWatchlist}>Save to Watchlist</button>
+      <button
+        onClick={saveToWatchlist}
+        className="mt-3 px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700"
+      >
+        Save to Watchlist
+      </button>
     </div>
   );
 };
